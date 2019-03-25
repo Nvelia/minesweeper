@@ -1,0 +1,209 @@
+html{
+    height:100%;
+    background: rgb(224, 226, 245)
+}
+
+body{
+    max-width:1400px;
+    height:100%;
+    background:white;
+    margin:auto;
+    box-shadow: 0 0 10px black;
+}
+
+h1{
+    text-align: center;
+}
+
+/* Menu */
+
+nav ul, .bonusInstructions{
+    list-style-type: none;
+    padding:0;
+}
+
+nav ul li, .bonusInstructions li{
+    margin: 10px 0;
+}
+
+
+
+nav .linksMenu{
+    display: block;
+    border: solid 1px rgb(77, 85, 160);
+    padding: 15px 0px;
+    color:black;
+    text-align: center;
+    font-size: 1.8rem;
+}
+
+nav .linksMenu:hover{
+    text-decoration: none;
+    background: rgb(224, 226, 245);
+    border: solid 1px rgb(77, 85, 160);
+}
+
+/* Settings */
+
+#soloDiv{
+    border: solid 1px rgb(77, 85, 160);
+    padding:010px;
+    max-width: 800px;
+    margin:10px auto;
+    position:relative;
+    display: none;
+}
+
+#customSettings{
+    display:none;
+}
+
+#soloDiv input{
+    width:100px;
+    margin-bottom:10px
+}
+
+
+#soloDiv select{
+    width:100%;
+    padding:5px;
+    margin-bottom:15px;
+}
+
+#soloDiv a{
+    position:absolute;
+    right: 10px;
+    bottom: 10px;
+}
+
+
+
+.bloc{
+    border: solid 1px rgb(77, 85, 160);
+    height: 50px;
+    width: 50px;
+    background: rgb(224, 226, 245);
+}
+
+.hidden{
+    background: rgb(166, 173, 236) !important;
+    border: outset 2px rgb(166, 173, 236);
+    z-index:999;
+}
+
+.hover:hover{
+    border: inset 2px rgb(166, 173, 236);
+    cursor: default;
+}
+
+.mine{
+    background: url('mine.png');
+}
+
+.textNumber{
+    text-align: center;
+    line-height: 50px;
+    font-weight:bold;
+    font-size:20px
+}
+
+.flagged{
+    background: url('flag.png') !important;
+}
+
+#board{
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select:none;
+    user-select:none;
+    -o-user-select:none;
+    display:flex;    
+}
+
+
+input[type=checkbox]{
+    position:relative;
+    right:40px;
+    top:4px;
+    cursor:pointer;
+    zoom:1.4
+
+}
+
+.bonus{
+    display:flex;
+    margin-bottom:10px;
+    width:100px;
+    box-shadow: 3px 3px rgb(224, 226, 245);
+    cursor:pointer;
+}
+
+
+#playerBonuses{
+    display:none;
+    width:100px;
+    margin: 0;
+}
+
+.bonusBtn{
+    width:50px;
+    height:50px;
+    border:none;
+}
+
+.sideBonusBtn{
+    display:block;
+    width:50px;
+    height:50px;
+    border: solid 1px rgb(224, 226, 245);
+    line-height: 50px;
+    font-size:30px;
+    text-align: center;
+    font-weight:bold;
+}
+
+.bonus:hover{
+    position:relative;
+    top:2px;
+    box-shadow: 1px 1px rgb(166, 173, 236);
+}
+
+#reveal{
+    background:url('reveal.png');
+}
+
+#retry{
+    background:url('retry.png');
+}
+
+.boardAndBonuses{
+    display:flex;
+    justify-content: center;
+    margin-top:20px;
+}
+
+.blink{
+    border: solid 2px red;
+}
+
+.gameInfo{
+    display:flex;
+    justify-content: space-between;
+}
+
+#blockTime{
+    display:none;
+}
+
+#flashtag{
+    display:none;
+    padding: 0 15px;
+    line-height: 45px;
+    height:45px;
+    background: rgb(166, 173, 236);
+    font-weight: bold;
+}
+
+#playerInfo span{
+    font-size : 1.3em;
+}

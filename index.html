@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Démineur VS</title>
+</head>
+<body>
+    <div class="container">
+        <h1 class="py-4">Démineur VERSUS</h1>
+    </div>
+    
+    <div class="container">
+        <h2>Règles du jeu</h2>
+        <p>
+            <ol>
+                <li>Votre objectif est de trouver et d'éviter toutes les mines sur la grille.</li>
+                <li>Pour voir ce qu'il se trouve sous une case, il suffit de cliquer dessus.</li>
+                <li>Un clic droit permet de marquer une case potentiellement minée. Cependant, vous êtes limité. Vous avez autant de marqueurs qu'il y a de mines.</li>
+                <li>Si une case avec une mine est révélée, vous perdez la partie.</li>
+                <li>Si vous révéler une case sans mine, le nombre exact de mines autour de cette case sera indiquée.</li>
+                <li>Les difficultés prédéfinies sont en 10x10.</li>
+            </ol>
+            <p class="mt-4">
+                Des bonus sont égalements présents si vous souhaitez les activer. Ils sont déblocables en découvrant des cases non minées.
+            </p>
+            <ul class="bonusInstructions">
+                <li><img src="css/reveal.png"   alt="image d'un oeil"> "Reveal" : Permet de révéler une case aléatoirement. Ce bonus évitera toujours les mines. 3 charges maximums.</li>
+                <li><img src="css/retry.png"    alt="flèche tournante"> "Retry" :Permet, lors d'un clique sur une mine, de continuer à jouer. Attention toutefois, ce bonus n'est utilisable qu'une fois par partie.</li>
+            </ul>
+        </p>
+    </div>
+
+    <nav class="container">
+        <ul>
+            <li><a href="#" class="linksMenu" id="solo">Un joueur</a></li>
+            <li><a href="#" class="linksMenu" id="multi">Multijoueur (A venir)</a></li>
+            <li><a href="#" class="linksMenu" id="bestScores">Meilleures Scores (A venir)</a></li>
+        </ul>
+
+        <div id="soloDiv" class="container">
+                <div id="settings">
+                    <h3>Difficulté</h3>
+                    <p>Choisissez la difficulté</p>
+                    <select class="difficulty">
+                        <option value=""></option>
+                        <option value="veryEasy">Très Facile (5 mines)</option>
+                        <option value="easy">Facile (10 mines)</option>
+                        <option value="medium">Normal (15 mines)</option>
+                        <option value="hard">Difficile (25 mines)</option>
+                    </select>
+                    Utilisation de bonus? <input type="checkbox" name="bonusCheckbox"> <br>
+                    <button type="button" id="difficultyBtn">Lancer la partie</button>
+                    <a href="#" id="customLink">Paramètres personnalisés</a>
+                </div>
+                
+                <div id="customSettings">
+                    <h3>Paramètres personnalisés</h3>
+                    <p>Personnalisez votre partie</p>
+                        <label for="width">Largeur: </label>
+                        <input type="number" name="width">
+                        <label for="height">Hauteur: </label>
+                        <input type="number" name="height">
+                        <label for="mines"> Nombre de mines: </label>
+                        <input type="number" name="mines"> <br>
+                        Utilisation de bonus? <input type="checkbox" name="bonusCheckbox"> <br>
+                    <button type="button" id="customBtn">Lancer la partie</button>
+                    <a href="#" id="difficultyLink">Paramètres prédéfinis</a>
+                </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="gameInfo">
+            <h2 id="blockTime">
+                <span>Temps: </span>
+                <span id="timer">0</span>
+            </h2>
+            <div id="flashtag">
+                <p></p>
+            </div>
+            <div id="playerInfo">
+                <span></span>
+                <span></span>
+            </div>
+        </div>  
+        <div class="boardAndBonuses">
+            <div class="minesweeper" id="game">
+            </div>
+        
+            <div class="container" id="playerBonuses">
+                <div class="bonus">
+                    <button id="reveal" class="bonusBtn"></button>
+                    <span class="sideBonusBtn" id="sideRevealNumber">0</span>
+                </div>
+                <div class="bonus">
+                    <button id="retry"  class="bonusBtn"></button>
+                    <span class="sideBonusBtn" id="sideRetryNumber">0</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    
+
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/Timer.js"></script>
+    <script src="js/Board.js"></script>
+    <script src="js/Player.js"></script>
+    <script src="js/Game.js"></script>
+    <script src="js/Bonus.js"></script>
+    <script src="js/script.js"></script>
+
+</body>
+</html>
