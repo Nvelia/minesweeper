@@ -1,13 +1,14 @@
 html{
-    height:100%;
     background: rgb(224, 226, 245)
 }
 
 body{
     max-width:1400px;
     height:100%;
+    overflow: scroll;
     background:white;
-    margin:auto;
+    margin:0 auto;
+    padding-bottom:50px;
     box-shadow: 0 0 10px black;
 }
 

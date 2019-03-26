@@ -114,6 +114,9 @@ var Board = {
         },
 
         unlockBonuses : function(){
+            if(Game.bonus === false){
+                return;
+            }
             var index = 0;
 
             index = Math.floor(Math.random() * (51- this.ratio)) + this.ratio;
